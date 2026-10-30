@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q15 - ES6 Features</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #eef2f5; }
+        .box { background: white; padding: 30px; max-width: 450px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        #output { margin-top: 15px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>ES6 Features Demo</h2>
+        <button onclick="runES6Demo()">Run Demo</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const runES6Demo = () => {
+            // 1. Destructuring assignment
+            const student = { name: "Rahul", course: "B.Tech", semester: 4 };
+            const { name, course, semester } = student;
+
+            // 2. Template Literals & Arrow function computation
+            const calculateSquare = (x) => x * x;
+            let squareVal = calculateSquare(5);
+
+            // Output using Template Literals
+            const resultHTML = `
+                <strong>Student Name:</strong> ${name} <br>
+                <strong>Course:</strong> ${course} (Sem ${semester}) <br>
+                <strong>Square of 5 (via Arrow Function):</strong> ${squareVal}
+            `;
+
+            document.getElementById("output").innerHTML = resultHTML;
+        };
+    </script>
+</body>
+</html>

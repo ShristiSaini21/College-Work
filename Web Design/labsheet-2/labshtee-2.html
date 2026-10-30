@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Sheet 2 - Complete Codes</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: Arial, sans-serif; color: #333; line-height: 1.4; margin: 0; padding: 0; }
+        .page { page-break-after: always; height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-start; }
+        h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 4px; margin-top: 0; font-size: 14px; }
+        pre { background-color: #f4f4f9; border: 1px solid #ddd; border-radius: 5px; padding: 10px; font-family: 'Courier New', monospace; font-size: 10px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; flex-grow: 1; margin: 6px 0 0 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Q1 -->
+    <div class="page">
+        <h2>Question 1: HTML Form with text, password, radio, checkboxes, select, textarea styled with external CSS</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q1 - Styled Form&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f8f9fa; }
+        form { width: 350px; padding: 25px; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        input[type="text"], input[type="password"], select, textarea { width: 100%; padding: 8px; margin: 6px 0 15px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;h3 style="margin-top:0; color:#333;"&gt;User Registration Form&lt;/h3&gt;
+        &lt;label&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" placeholder="Enter name"&gt;
+        
+        &lt;label&gt;Password:&lt;/label&gt;
+        &lt;input type="password" placeholder="Enter password"&gt;
+        
+        &lt;label&gt;Gender:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="radio" name="gender" value="male"&gt; Male &nbsp;&nbsp;
+        &lt;input type="radio" name="gender" value="female"&gt; Female&lt;br&gt;&lt;br&gt;
+        
+        &lt;label&gt;Interests:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="checkbox"&gt; Reading &nbsp;&nbsp;
+        &lt;input type="checkbox"&gt; Coding&lt;br&gt;&lt;br&gt;
+        
+        &lt;label&gt;City:&lt;/label&gt;
+        &lt;select&gt;
+            &lt;option&gt;Delhi&lt;/option&gt;
+            &lt;option&gt;Roorkee&lt;/option&gt;
+            &lt;option&gt;Dehradun&lt;/option&gt;
+        &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;label&gt;Feedback:&lt;/label&gt;
+        &lt;textarea rows="3" placeholder="Write feedback here..."&gt;&lt;/textarea&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q2 -->
+    <div class="page">
+        <h2>Question 2: Student Registration Form incorporating HTML5 validation attributes</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q2 - HTML5 Validation&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        form { width: 320px; padding: 20px; border: 2px solid #0056b3; border-radius: 8px; }
+        input { width: 100%; padding: 8px; margin: 5px 0 12px 0; box-sizing: border-box; }
+        input:invalid { border-color: #ff4d4d; }
+        input:valid { border-color: #28a745; }
+        button { background: #0056b3; color: white; border: none; padding: 10px; width: 100%; border-radius: 4px; cursor: pointer; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;h3 style="margin-top:0;"&gt;Validation Form&lt;/h3&gt;
+        &lt;label&gt;Username (3-15 chars):&lt;/label&gt;
+        &lt;input type="text" required minlength="3" maxlength="15" placeholder="Required"&gt;
+        
+        &lt;label&gt;Email Address:&lt;/label&gt;
+        &lt;input type="email" required placeholder="name@example.com"&gt;
+        
+        &lt;label&gt;Phone Number (10 digits):&lt;/label&gt;
+        &lt;input type="text" pattern="[0-9]{10}" required placeholder="10-digit number"&gt;
+        
+        &lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q3 -->
+    <div class="page">
+        <h2>Question 3: Multi-column layout using frameset and frame tags (legacy practice)</h2>
+        <pre>&lt;!-- Note: frameset is a legacy HTML feature --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Q3 - Frameset Layout&lt;/title&gt;
+&lt;/head&gt;
+&lt;frameset rows="20%, 80%" border="1"&gt;
+    &lt;frame src="header.html" name="header_frame"&gt;
+    &lt;frameset cols="25%, 75%"&gt;
+        &lt;frame src="nav.html" name="navigation_frame"&gt;
+        &lt;frame src="content.html" name="content_frame"&gt;
+    &lt;/frameset&gt;
+&lt;/frameset&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q4 -->
+    <div class="page">
+        <h2>Question 4: Modern webpage layout replicating frame-like behavior using CSS Flexbox</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q4 - Flexbox Frames&lt;/title&gt;
+    &lt;style&gt;
+        body { margin: 0; display: flex; flex-direction: column; height: 100vh; font-family: Arial; }
+        header { background: #2c3e50; color: white; padding: 20px; font-size: 18px; font-weight: bold; }
+        .main-container { display: flex; flex: 1; }
+        nav { width: 220px; background: #ecf0f1; padding: 20px; border-right: 1px solid #bdc3c7; }
+        main-content { flex: 1; padding: 20px; background: #ffffff; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;Header Frame (Top Section)&lt;/header&gt;
+    &lt;div class="main-container"&gt;
+        &lt;nav&gt;Navigation Frame (Left Menu)&lt;/nav&gt;
+        &lt;main-content&gt;Content Frame (Main Working Area)&lt;/main-content&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q5 -->
+    <div class="page">
+        <h2>Question 5: User login interface inside centered card container using box-shadow, border-radius & absolute positioning</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q5 - Login Card&lt;/title&gt;
+    &lt;style&gt;
+        body { background: #f0f2f5; height: 100vh; display: flex; justify-content: center; align-items: center; margin: 0; font-family: Arial; }
+        .login-card { position: relative; width: 340px; padding: 35px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .login-card h2 { margin-top: 0; color: #1a73e8; text-align: center; }
+        .login-card input { width: 100%; padding: 10px; margin: 8px 0 16px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        .login-card button { width: 100%; padding: 10px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="login-card"&gt;
+        &lt;h2&gt;Member Login&lt;/h2&gt;
+        &lt;label&gt;Username&lt;/label&gt;
+        &lt;input type="text" placeholder="Enter username"&gt;
+        &lt;label&gt;Password&lt;/label&gt;
+        &lt;input type="password" placeholder="Enter password"&gt;
+        &lt;button&gt;Sign In&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q6 -->
+    <div class="page">
+        <h2>Question 6: CSS stylesheet utilizing CSS Grid to arrange form elements into a clean two-column grid layout</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q6 - CSS Grid Form&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .grid-form { display: grid; grid-template-columns: 130px 1fr; gap: 14px; width: 420px; padding: 25px; background: #fff; border: 1px solid #ccc; border-radius: 8px; }
+        .grid-form label { align-self: center; font-weight: bold; color: #333; }
+        .grid-form input { padding: 8px; border: 1px solid #bbb; border-radius: 4px; }
+        .grid-form button { grid-column: span 2; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="grid-form"&gt;
+        &lt;label&gt;First Name:&lt;/label&gt;
+        &lt;input type="text" placeholder="First name"&gt;
+        &lt;label&gt;Last Name:&lt;/label&gt;
+        &lt;input type="text" placeholder="Last name"&gt;
+        &lt;label&gt;Email ID:&lt;/label&gt;
+        &lt;input type="email" placeholder="Email address"&gt;
+        &lt;button type="submit"&gt;Save Details&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q7 -->
+    <div class="page">
+        <h2>Question 7: Interactive feedback form where input fields change border color and background tint on :focus pseudo-class</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q7 - Focus Pseudo Class&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .focus-form { width: 320px; padding: 25px; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; }
+        .focus-form input, .focus-form textarea { width: 100%; padding: 10px; margin: 6px 0 15px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; transition: all 0.3s ease; }
+        .focus-form input:focus, .focus-form textarea:focus { border-color: #0056b3; background-color: #e6f2ff; outline: none; box-shadow: 0 0 6px rgba(0,86,179,0.3); }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="focus-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Feedback Form&lt;/h3&gt;
+        &lt;label&gt;Your Name:&lt;/label&gt;
+        &lt;input type="text" placeholder="Click to focus..."&gt;
+        &lt;label&gt;Comments:&lt;/label&gt;
+        &lt;textarea rows="3" placeholder="Type comments here..."&gt;&lt;/textarea&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q8 -->
+    <div class="page">
+        <h2>Question 8: HTML form featuring file upload and styled custom submit button with CSS transitions on :hover and :active</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q8 - File Upload & Transitions&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .upload-form { width: 320px; padding: 25px; border: 1px solid #ccc; border-radius: 8px; }
+        .upload-form input[type="file"] { margin: 10px 0 20px 0; width: 100%; }
+        .custom-btn { background-color: #ff5722; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background 0.3s ease, transform 0.1s ease; width: 100%; }
+        .custom-btn:hover { background-color: #e64a19; }
+        .custom-btn:active { transform: scale(0.97); }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="upload-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Document Upload&lt;/h3&gt;
+        &lt;label&gt;Select Document:&lt;/label&gt;
+        &lt;input type="file"&gt;
+        &lt;button type="submit" class="custom-btn"&gt;Upload File&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q9 -->
+    <div class="page">
+        <h2>Question 9: Survey form utilizing grouped form controls using fieldset and legend tags, styled with custom padding and margins</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q9 - Fieldset & Legend&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        form { width: 350px; }
+        fieldset { border: 2px solid #3f51b5; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        legend { background: #3f51b5; color: white; padding: 5px 15px; border-radius: 4px; font-weight: bold; }
+        label { display: block; margin-top: 10px; font-size: 14px; }
+        input[type="text"] { width: 100%; padding: 7px; margin-top: 5px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Personal Details&lt;/legend&gt;
+            &lt;label&gt;First Name:&lt;/label&gt;
+            &lt;input type="text" placeholder="Enter first name"&gt;
+            &lt;label&gt;Last Name:&lt;/label&gt;
+            &lt;input type="text" placeholder="Enter last name"&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q10 -->
+    <div class="page">
+        <h2>Question 10: CSS-styled data entry table embedded inside a form container with alternating row colors and hover effects</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q10 - Styled Table in Form&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .table-form { width: 450px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background: #fff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 9px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        tr:hover { background-color: #e2e6ea; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="table-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Data Entry Records&lt;/h3&gt;
+        &lt;table&gt;
+            &lt;tr&gt;&lt;th&gt;Emp ID&lt;th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Department&lt;/th&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;101&lt;/td&gt;&lt;td&gt;Aman Sharma&lt;/td&gt;&lt;td&gt;Engineering&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;102&lt;/td&gt;&lt;td&gt;Rahul Verma&lt;/td&gt;&lt;td&gt;Marketing&lt;/td&gt;&lt;/tr&gt;
+            &lt;tr&gt;&lt;td&gt;103&lt;/td&gt;&lt;td&gt;Priya Singh&lt;/td&gt;&lt;td&gt;HR&lt;/td&gt;&lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q11 -->
+    <div class="page">
+        <h2>Question 11: HTML document utilizing inline, internal, and external CSS stylesheets to style a contact form observing specificity rules</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q11 - CSS Specificity&lt;/title&gt;
+    &lt;link rel="stylesheet" href="external.css"&gt;
+    &lt;style&gt;
+        /* Internal CSS overrides external stylesheet */
+        p.note { color: green; font-size: 15px; font-weight: normal; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form style="width: 320px; padding: 20px; border: 1px solid #ccc;"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Specificity Demonstration&lt;/h3&gt;
+        &lt;!-- Inline CSS overrides both internal and external CSS due to highest specificity --&gt;
+        &lt;p class="note" style="color: red; font-weight: bold; font-size: 16px;"&gt;
+            This text demonstrates CSS specificity rules (Inline > Internal > External).
+        &lt;/p&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q12 -->
+    <div class="page">
+        <h2>Question 12: Responsive payment gateway checkout form using CSS media queries to adjust input widths on mobile screens</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q12 - Responsive Media Query&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .checkout-input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        @media (min-width: 768px) {
+            .checkout-input { width: 50%; } /* Wider inputs on desktop screens */
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form style="width: 400px; padding: 20px; border: 1px solid #ddd; background: #fff;"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Checkout Form&lt;/h3&gt;
+        &lt;label&gt;Card Number:&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="text" class="checkout-input" placeholder="XXXX-XXXX-XXXX-XXXX"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q13 -->
+    <div class="page">
+        <h2>Question 13: Custom styled checkboxes and radio buttons using CSS pseudo-elements and sibling selectors</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q13 - Custom Checkboxes&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .form-box { width: 300px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input[type="checkbox"] { accent-color: #007bff; width: 18px; height: 18px; vertical-align: middle; }
+        label { font-size: 15px; margin-left: 8px; cursor: pointer; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="form-box"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Preferences&lt;/h3&gt;
+        &lt;input type="checkbox" id="news"&gt;
+        &lt;label for="news"&gt;Receive Daily Newsletter&lt;/label&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q14 -->
+    <div class="page">
+        <h2>Question 14: Design an HTML form with a range slider (type=range) and number input, displaying live unit labels</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q14 - Range Slider&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .range-form { width: 320px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        input[type="range"] { width: 190px; vertical-align: middle; }
+        output { font-weight: bold; color: #007bff; margin-left: 10px; font-size: 16px; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="range-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Volume Selector&lt;/h3&gt;
+        &lt;label&gt;Sound Level:&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="range" min="0" max="100" value="50" oninput="volOutput.value = this.value"&gt;
+        &lt;output id="volOutput"&gt;50&lt;/output&gt;&lt;span&gt;%&lt;/span&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q15 -->
+    <div class="page">
+        <h2>Question 15: Build a search input box that expands in width smoothly using CSS transition when focused</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q15 - Expanding Search Bar&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .search-form { width: 350px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .expanding-search { width: 160px; padding: 8px 12px; border: 1px solid #aaa; border-radius: 20px; transition: width 0.4s ease-in-out; }
+        .expanding-search:focus { width: 280px; outline: none; border-color: #007bff; box-shadow: 0 0 5px rgba(0,123,255,0.3); }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="search-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Search Box Widget&lt;/h3&gt;
+        &lt;input type="search" class="expanding-search" placeholder="Type to search..."&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q16 -->
+    <div class="page">
+        <h2>Question 16: Create a structured employee evaluation form using CSS float and clear properties for alignment</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q16 - Float and Clear&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .eval-form { width: 450px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .col-left { float: left; width: 46%; }
+        .col-right { float: right; width: 48%; }
+        .clearfix { clear: both; }
+        .eval-form input { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="eval-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Employee Evaluation&lt;/h3&gt;
+        &lt;div class="col-left"&gt;
+            &lt;label&gt;Employee Name:&lt;/label&gt;
+            &lt;input type="text" placeholder="Full name"&gt;
+        &lt;/div&gt;
+        &lt;div class="col-right"&gt;
+            &lt;label&gt;Performance Rating:&lt;/label&gt;
+            &lt;input type="number" min="1" max="10" placeholder="Scale 1-10"&gt;
+        &lt;/div&gt;
+        &lt;div class="clearfix"&gt;&lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q17 -->
+    <div class="page">
+        <h2>Question 17: Write an HTML form incorporating hidden input fields (type=hidden) to pass session data securely</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q17 - Hidden Input Fields&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .hidden-form { width: 320px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .hidden-form input[type="text"] { width: 100%; padding: 8px; margin: 6px 0 15px 0; box-sizing: border-box; }
+        .hidden-form button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action="secure_process.php" method="POST" class="hidden-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Secure Submission&lt;/h3&gt;
+        &lt;!-- Hidden input field passing session token securely --&gt;
+        &lt;input type="hidden" name="user_session_token" value="SECURE_TOKEN_XYZ98765"&gt;
+        
+        &lt;label&gt;Username:&lt;/label&gt;
+        &lt;input type="text" name="username" placeholder="Enter username"&gt;
+        &lt;button type="submit"&gt;Submit Securely&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q18 -->
+    <div class="page">
+        <h2>Question 18: Design a responsive contact us page featuring an embedded form on one side and company location details on the other using CSS Flexbox</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q18 - Contact Flexbox Page&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .contact-wrapper { display: flex; gap: 20px; width: 550px; }
+        .panel { flex: 1; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background: #fdfdfd; }
+        .panel input { width: 100%; padding: 7px; margin-top: 5px; margin-bottom: 10px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="contact-wrapper"&gt;
+        &lt;div class="panel"&gt;
+            &lt;h3 style="margin-top:0;"&gt;Contact Us&lt;/h3&gt;
+            &lt;label&gt;Name:&lt;/label&gt;
+            &lt;input type="text" placeholder="Your name"&gt;
+        &lt;/div&gt;
+        &lt;div class="panel"&gt;
+            &lt;h3 style="margin-top:0;"&gt;Our Location&lt;/h3&gt;
+            &lt;p&gt;COER University&lt;br&gt;Roorkee, Uttarakhand&lt;br&gt;India - 247667&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q19 -->
+    <div class="page">
+        <h2>Question 19: Implement CSS typography rules (font-family, line-height, letter-spacing, text-transform) across all labels and placeholders</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q19 - Typography Rules&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .typo-form { width: 320px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .typo-form label { font-family: 'Verdana', sans-serif; line-height: 2.2; letter-spacing: 1.2px; text-transform: uppercase; font-weight: bold; font-size: 13px; color: #444; display: block; }
+        .typo-form input { width: 100%; padding: 8px; margin-bottom: 12px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="typo-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Typography Form&lt;/h3&gt;
+        &lt;label&gt;User Registration&lt;/label&gt;
+        &lt;input type="text" placeholder="Enter name..."&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q20 -->
+    <div class="page">
+        <h2>Question 20: Build a multi-step user onboarding form layout using CSS display properties (display: none / block) to simulate step progression</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q20 - Multi-Step Form&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .step-box { width: 320px; padding: 20px; border: 1px solid #007bff; border-radius: 8px; background: #fff; }
+        .step-1 { display: block; }  /* Visible step */
+        .step-2 { display: none; }   /* Hidden step until user progresses */
+        .step-box input { width: 100%; padding: 8px; margin-top: 8px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="step-box step-1"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Step 1: Personal Details&lt;/h3&gt;
+        &lt;label&gt;Full Name:&lt;/label&gt;
+        &lt;input type="text" placeholder="Enter full name"&gt;
+    &lt;/div&gt;
+    &lt;div class="step-box step-2"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Step 2: Address Info&lt;/h3&gt;
+        &lt;label&gt;City:&lt;/label&gt;
+        &lt;input type="text" placeholder="Enter city"&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q21 -->
+    <div class="page">
+        <h2>Question 21: Create an accessible form where every input is explicitly linked to its corresponding label using 'for' and 'id' attributes</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q21 - Accessible Form&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .accessible-form { width: 320px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .accessible-form label { display: block; margin-bottom: 6px; font-weight: bold; color: #333; }
+        .accessible-form input { width: 100%; padding: 8px; box-sizing: border-box; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="accessible-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Accessible Form&lt;/h3&gt;
+        &lt;label for="username_input"&gt;Username:&lt;/label&gt;
+        &lt;input type="text" id="username_input" name="username" placeholder="Type username..."&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q22 -->
+    <div class="page">
+        <h2>Question 22: Design a newsletter subscription widget with a floating label effect using CSS positioning</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Q22 - Floating Label Widget&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: Arial; padding: 20px; }
+        .widget-form { width: 320px; padding: 25px; border: 1px solid #ccc; border-radius: 8px; }
+        .floating-group { position: relative; margin-top: 15px; }
+        .floating-group input { width: 100%; padding: 12px 10px; border: 1px solid #ccc; border-radius: 4px; outline: none; box-sizing: border-box; }
+        .floating-group label { position: absolute; left: 10px; top: 12px; background: white; padding: 0 4px; color: #777; transition: 0.2s ease all; pointer-events: none; }
+        .floating-group input:focus ~ label, .floating-group input:valid ~ label { top: -9px; font-size: 12px; color: #007bff; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form class="widget-form"&gt;
+        &lt;h3 style="margin-top:0;"&gt;Newsletter Widget&lt;/h3&gt;
+        &lt;div class="floating-group"&gt;
+            &lt;input type="email" id="floating_email" required&gt;
+            &lt;label for="floating_email"&gt;Email Address&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+</body>
+</html>

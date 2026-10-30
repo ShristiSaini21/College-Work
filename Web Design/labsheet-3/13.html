@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q13 - Closure Counter</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f0f2f5; text-align: center; }
+        .box { background: white; padding: 30px; max-width: 350px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; font-size: 16px; margin: 5px; cursor: pointer; font-weight: bold; }
+        #countDisplay { font-size: 32px; font-weight: bold; color: #333; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Private Counter (Closure)</h2>
+        <div id="countDisplay">0</div>
+        <button onclick="counter.increment()">Increment</button>
+        <button onclick="counter.decrement()">Decrement</button>
+    </div>
+
+    <script>
+        // Closure implementation maintaining private variable
+        const createCounter = function() {
+            let _counter = 0; // Private variable
+            return {
+                increment: function() {
+                    _counter++;
+                    updateDisplay();
+                },
+                decrement: function() {
+                    _counter--;
+                    updateDisplay();
+                },
+                getValue: function() {
+                    return _counter;
+                }
+            };
+        };
+
+        const counter = createCounter();
+
+        function updateDisplay() {
+            document.getElementById("countDisplay").innerText = counter.getValue();
+        }
+    </script>
+</body>
+</html>

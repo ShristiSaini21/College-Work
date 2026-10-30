@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q20 - Multi-Step Onboarding</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f4f4f9; }
+        .box { background: white; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .step { display: block; }
+        .hidden { display: none; }
+        input { width: 100%; padding: 10px; margin: 10px 0 20px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Onboarding Wizard</h2>
+        <!-- Step 1 -->
+        <div id="step1" class="step">
+            <h3>Step 1: Personal Info</h3>
+            <input type="text" placeholder="Enter Name">
+            <button onclick="document.getElementById('step1').classList.add('hidden'); document.getElementById('step2').classList.remove('hidden');">Next</button>
+        </div>
+        <!-- Step 2 (Initially Hidden) -->
+        <div id="step2" class="step hidden">
+            <h3>Step 2: Account Setup</h3>
+            <input type="password" placeholder="Create Password">
+            <button onclick="alert('Form Submitted Successfully!');">Finish</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q19 - Keyboard Event Capture</title>
+    <style>
+        body { font-family: Arial; padding: 50px; background: #f4f4f9; text-align: center; }
+        .box { background: white; padding: 40px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        #keyDisplay { font-size: 20px; font-weight: bold; color: #6200ee; margin-top: 20px; min-height: 40px; }
+        input { padding: 10px; width: 80%; font-size: 16px; text-align: center; border: 2px solid #ccc; border-radius: 4px; outline: none; }
+        input:focus { border-color: #6200ee; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Keyboard Event Logger</h2>
+        <p>Type anything below:</p>
+        <input type="text" id="keyInput" placeholder="Click here and press keys">
+        <div id="keyDisplay">Press any key...</div>
+    </div>
+
+    <script>
+        const inputField = document.getElementById("keyInput");
+        const display = document.getElementById("keyDisplay");
+
+        inputField.addEventListener("keydown", function(event) {
+            display.innerHTML = `Key: <span style="color:red;">${event.key}</span> | Code: <span style="color:blue;">${event.code}</span>`;
+        });
+    </script>
+</body>
+</html>

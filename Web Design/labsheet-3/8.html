@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q8 - Event Listener Calculator</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #eef2f5; }
+        .box { background: white; padding: 25px; max-width: 300px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        input { width: 90%; padding: 8px; margin-bottom: 10px; font-size: 16px; text-align: right; }
+        .btns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+        button { padding: 10px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Calculator</h2>
+        <input type="text" id="display" readonly>
+        <div class="btns" id="btnGroup">
+            <button>7</button><button>8</button><button>9</button><button>/</button>
+            <button>4</button><button>5</button><button>6</button><button>*</button>
+            <button>1</button><button>2</button><button>3</button><button>-</button>
+            <button>0</button><button>C</button><button>=</button><button>+</button>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById("display");
+        const buttons = document.querySelectorAll(".btns button");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function() {
+                let val = this.innerText;
+                if (val === "C") {
+                    display.value = "";
+                } else if (val === "=") {
+                    try {
+                        display.value = eval(display.value);
+                    } catch (e) {
+                        display.value = "Error";
+                    }
+                } else {
+                    display.value += val;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Sheet 1 - All 25 Questions</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: Arial, sans-serif; color: #333; line-height: 1.4; margin: 0; padding: 0; }
+        .page { page-break-after: always; height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: flex-start; }
+        h2 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 4px; margin-top: 0; font-size: 16px; }
+        pre { background-color: #f4f4f9; border: 1px solid #ddd; border-radius: 5px; padding: 12px; font-family: 'Courier New', monospace; font-size: 11px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; flex-grow: 1; margin: 8px 0 0 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Q1 -->
+    <div class="page">
+        <h2>Question 1: Basic HTML5 Webpage with Heading & Paragraph</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;&lt;title&gt;Hobby&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Favorite Hobby&lt;/h1&gt;
+    &lt;p&gt;Coding and building web applications is my favorite hobby.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q2 -->
+    <div class="page">
+        <h2>Question 2: Text Formatting Tags</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;p&gt;&lt;b&gt;Bold Text&lt;/b&gt; | &lt;strong&gt;Strong Text&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;i&gt;Italic Text&lt;/i&gt; | &lt;em&gt;Emphasized Text&lt;/em&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;u&gt;Underlined Text&lt;/u&gt; | &lt;del&gt;Strikethrough Text&lt;/del&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q3 -->
+    <div class="page">
+        <h2>Question 3: Six Levels of Heading Tags</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;h1&gt;Heading 1&lt;/h1&gt;
+    &lt;h2&gt;Heading 2&lt;/h2&gt;
+    &lt;h3&gt;Heading 3&lt;/h3&gt;
+    &lt;h4&gt;Heading 4&lt;/h4&gt;
+    &lt;h5&gt;Heading 5&lt;/h5&gt;
+    &lt;h6&gt;Heading 6&lt;/h6&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q4 -->
+    <div class="page">
+        <h2>Question 4: Blockquote, Short Quote, and Citation</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;blockquote cite="https://example.com"&gt;
+        "Simplicity is the soul of efficiency." - Austin Freeman
+    &lt;/blockquote&gt;
+    &lt;p&gt;As &lt;cite&gt;Albert Einstein&ltcite&gt; said, &lt;q&gt;Imagination is more important than knowledge.&lt;/q&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q5 -->
+    <div class="page">
+        <h2>Question 5: Recipe Page with hr and br Tags</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;h2&gt;Simple Recipe&lt;/h2&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Ingredients:&lt;br&gt;1. Flour&lt;br&gt;2. Sugar&lt;br&gt;3. Milk&lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Mix well and bake at 180°C.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q6 -->
+    <div class="page">
+        <h2>Question 6: Unordered List of Favorite Movies</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;h3&gt;Top Movies&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Inception&lt;/li&gt;
+        &lt;li&gt;Interstellar&lt;/li&gt;
+        &lt;li&gt;The Dark Knight&lt;/li&gt;
+        &lt;li&gt;Avatar&lt;/li&gt;
+        &lt;li&gt;Titanic&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q7 -->
+    <div class="page">
+        <h2>Question 7: Ordered List for Step-by-Step Instructions</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;h3&gt;Setup Guide&lt;/h3&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Download package&lt;/li&gt;
+        &lt;li&gt;Extract files&lt;/li&gt;
+        &lt;li&gt;Run application&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q8 -->
+    <div class="page">
+        <h2>Question 8: Description List (dl, dt, dd)</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;HTML&lt;/dt&gt;
+        &lt;dd&gt;Structure of web pages.&lt;/dd&gt;
+        &lt;dt&gt;CSS&lt;/dt&gt;
+        &lt;dd&gt;Styling of web pages.&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q9 -->
+    <div class="page">
+        <h2>Question 9: Multi-Level Nested List</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Engineering
+            &lt;ul&gt;
+                &lt;li&gt;CSE
+                    &lt;ol&gt;
+                        &lt;li&gt;First Year&lt;/li&gt;
+                        &lt;li&gt;Second Year&lt;/li&gt;
+                    &lt;/ol&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q10 -->
+    <div class="page">
+        <h2>Question 10: Ordered List with Roman and Lowercase Letters</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;ol type="I"&gt;
+        &lt;li&gt;Roman One&lt;/li&gt;
+        &lt;li&gt;Roman Two&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;ol type="a"&gt;
+        &lt;li&gt;Alphabet a&lt;/li&gt;
+        &lt;li&gt;Alphabet b&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q11 -->
+    <div class="page">
+        <h2>Question 11: Image Tag with src and alt Attributes</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;img src="myphoto.jpg" alt="Profile Picture"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q12 -->
+    <div class="page">
+        <h2>Question 12: Image with Width and Height Attributes</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;img src="myphoto.jpg" alt="Photo" width="250" height="200"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q13 -->
+    <div class="page">
+        <h2>Question 13: Clickable Image Redirecting to External Website</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;a href="https://www.google.com" target="_blank"&gt;
+        &lt;img src="myphoto.jpg" alt="Click to visit Google" width="150"&gt;
+    &lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q14 -->
+    <div class="page">
+        <h2>Question 14: Figure and Figcaption Tags</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;figure&gt;
+        &lt;img src="myphoto.jpg" alt="Nature" width="200"&gt;
+        &lt;figcaption&gt;Fig.1 - Scenic Nature View.&lt;/figcaption&gt;
+    &lt;/figure&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q15 -->
+    <div class="page">
+        <h2>Question 15: Local Directory vs External URL Images</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;p&gt;Local Image:&lt;/p&gt;
+    &lt;img src="myphoto.jpg" alt="Local" width="150"&gt;
+    &lt;p&gt;External URL Image:&lt;/p&gt;
+    &lt;img src="https://picsum.photos/150" alt="External"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q16 -->
+    <div class="page">
+        <h2>Question 16: HTML Table (3x3) with Student Info</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;table border="1" cellpadding="5"&gt;
+        &lt;tr&gt;&lt;th&gt;Roll&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Aman&lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Rahul&lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q17 -->
+    <div class="page">
+        <h2>Question 17: Product Price List Table with Caption and TH</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;table border="1" cellpadding="8"&gt;
+        &lt;caption&gt;&lt;b&gt;Product Price List&lt;/b&gt;&lt;/caption&gt;
+        &lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Pen&lt;/td&gt;&lt;td&gt;$1&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Notebook&lt;/td&gt;&lt;td&gt;$3&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q18 -->
+    <div class="page">
+        <h2>Question 18: Timetable Grid using Colspan</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;table border="1" cellpadding="5"&gt;
+        &lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th colspan="2"&gt;Schedule&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;Math&lt;/td&gt;&lt;td&gt;Physics&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q19 -->
+    <div class="page">
+        <h2>Question 19: Complex Data Table using Rowspan</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;table border="1" cellpadding="5"&gt;
+        &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td rowspan="2"&gt;Aman&lt;/td&gt;&lt;td&gt;Maths&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Science&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q20 -->
+    <div class="page">
+        <h2>Question 20: Financial Report Table (thead, tbody, tfoot)</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;table border="1" cellpadding="5"&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Month&lt;/th&gt;&lt;th&gt;Savings&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Jan&lt;/td&gt;&lt;td&gt;$100&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+        &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;$100&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q21 -->
+    <div class="page">
+        <h2>Question 21: User Registration Form</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        First Name: &lt;input type="text"&gt;&lt;br&gt;&lt;br&gt;
+        Last Name: &lt;input type="text"&gt;&lt;br&gt;&lt;br&gt;
+        Email: &lt;input type="email"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" value="Register"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q22 -->
+    <div class="page">
+        <h2>Question 22: Radio Buttons and Checkboxes</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        Gender: 
+        &lt;input type="radio" name="gender"&gt; Male 
+        &lt;input type="radio" name="gender"&gt; Female&lt;br&gt;&lt;br&gt;
+        Hobbies: 
+        &lt;input type="checkbox"&gt; Reading 
+        &lt;input type="checkbox"&gt; Coding
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q23 -->
+    <div class="page">
+        <h2>Question 23: Selection Dropdown Menu</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        City: 
+        &lt;select&gt;
+            &lt;option&gt;Delhi&lt;/option&gt;
+            &lt;option&gt;Mumbai&lt;/option&gt;
+            &lt;option&gt;Bangalore&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q24 -->
+    <div class="page">
+        <h2>Question 24: Feedback Form with Textarea and File Upload</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        Feedback:&lt;br&gt;
+        &lt;textarea rows="3" cols="25"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+        Upload Document: &lt;input type="file"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+    <!-- Q25 -->
+    <div class="page">
+        <h2>Question 25: Structured Survey Form with Fieldset and Legend</h2>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Personal Info&lt;/legend&gt;
+            Name: &lt;input type="text"&gt;&lt;br&gt;&lt;br&gt;
+            Age: &lt;input type="number"&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+
+</body>
+</html>

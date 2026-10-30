@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Sheet 2 - Question 1</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Registration Form</h2>
+        <form>
+            <!-- Text Input -->
+            <div class="input-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" placeholder="Enter your full name">
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+            </div>
+
+            <!-- Radio Buttons -->
+            <div class="input-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="input-group">
+                <label>Hobbies / Skills:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="hobby" value="coding"> Coding</label>
+                    <label><input type="checkbox" name="hobby" value="reading"> Reading</label>
+                    <label><input type="checkbox" name="hobby" value="sports"> Sports</label>
+                </div>
+            </div>
+
+            <!-- Dropdown Select -->
+            <div class="input-group">
+                <label for="course">Select Course:</label>
+                <select id="course">
+                    <option value="cse">Computer Science (CSE)</option>
+                    <option value="it">Information Technology (IT)</option>
+                    <option value="ece">Electronics (ECE)</option>
+                </select>
+            </div>
+
+            <!-- Textarea -->
+            <div class="input-group">
+                <label for="address">Address:</label>
+                <textarea id="address" rows="3" placeholder="Enter your address..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Form</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q21 - Callbacks & Async</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f4f4f9; text-align: center; }
+        .box { background: white; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        button { padding: 10px 20px; background: #6200ee; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        #output { margin-top: 20px; font-weight: bold; font-size: 16px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Async & Callbacks Demo</h2>
+        <button onclick="startProcess()">Start Async Task</button>
+        <div id="output">Click button to begin...</div>
+    </div>
+
+    <script>
+        function processData(data, callback) {
+            document.getElementById("output").innerText = `Processing: "${data}"... Please wait (2s)`;
+            
+            // Simulating asynchronous operation with setTimeout
+            setTimeout(() => {
+                let processedResult = data.toUpperCase() + " [COMPLETED]";
+                callback(processedResult);
+            }, 2000);
+        }
+
+        function displayResult(result) {
+            document.getElementById("output").innerText = `Callback Executed! Result: ${result}`;
+        }
+
+        function startProcess() {
+            processData("lab assignment data", displayResult);
+        }
+    </script>
+</body>
+</html>

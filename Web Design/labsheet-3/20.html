@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q20 - Dynamic Table Generator</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #eef2f5; text-align: center; }
+        .box { background: white; padding: 30px; max-width: 500px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input { width: 40%; padding: 8px; margin: 5px; box-sizing: border-box; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        td, th { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background: #007bff; color: white; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Dynamic Table Generator</h2>
+        <div>
+            <input type="number" id="rows" placeholder="Rows (e.g. 3)" min="1">
+            <input type="number" id="cols" placeholder="Columns (e.g. 3)" min="1">
+        </div>
+        <button onclick="generateTable()">Generate Table</button>
+        <div id="tableContainer"></div>
+    </div>
+
+    <script>
+        function generateTable() {
+            let r = parseInt(document.getElementById("rows").value);
+            let c = parseInt(document.getElementById("cols").value);
+            let container = document.getElementById("tableContainer");
+
+            if (isNaN(r) || isNaN(c) || r <= 0 || c <= 0) {
+                container.innerHTML = "<p style='color:red;'>Please enter valid row and column numbers!</p>";
+                return;
+            }
+
+            let html = "<table>";
+            for (let i = 1; i <= r; i++) {
+                html += "<tr>";
+                for (let j = 1; j <= c; j++) {
+                    html += `<td>R${i}C${j}</td>`;
+                }
+                html += "</tr>";
+            }
+            html += "</table>";
+
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4 - Modern Flexbox Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+        nav {
+            background-color: #f8f9fa;
+            width: 250px;
+            padding: 20px;
+            border-right: 1px solid #dee2e6;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        section {
+            padding: 30px;
+            flex: 1;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Header Section (Flexbox)</h2>
+    </header>
+
+    <div class="main-container">
+        <nav>
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h3>Main Content Area</h3>
+            <p>This layout mimics a multi-frame structure using modern CSS Flexbox instead of legacy framesets.</p>
+        </section>
+    </div>
+
+</body>
+</html>

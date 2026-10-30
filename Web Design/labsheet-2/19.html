@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q19 - Typography Rules</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .box {
+            background: white;
+            padding: 35px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-family: 'Georgia', serif;
+        }
+        .group {
+            margin-bottom: 20px;
+        }
+        /* Typography rules applied to labels */
+        label {
+            display: block;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #007bff;
+            margin-bottom: 8px;
+        }
+        /* Typography rules applied to input and placeholders */
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        input::placeholder {
+            font-style: italic;
+            letter-spacing: 0.5px;
+            color: #999;
+        }
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Registration Form</h2>
+        <form>
+            <div class="group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name...">
+            </div>
+            <div class="group">
+                <label>Email Address</label>
+                <input type="email" placeholder="name@domain.com...">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

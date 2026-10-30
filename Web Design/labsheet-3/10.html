@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q10 - Real-Time Validation</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f0f2f5; }
+        form { background: white; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        #errorMsg { color: red; font-size: 13px; margin-top: 5px; display: none; }
+        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <form id="regForm">
+        <h2>Password Validation</h2>
+        <div class="group">
+            <label>Password:</label>
+            <input type="password" id="pwd" required>
+        </div>
+        <div class="group">
+            <label>Confirm Password:</label>
+            <input type="password" id="cpwd" required>
+            <div id="errorMsg">Passwords do not match!</div>
+        </div>
+        <button type="submit" id="subBtn">Submit</button>
+    </form>
+
+    <script>
+        const pwd = document.getElementById("pwd");
+        const cpwd = document.getElementById("cpwd");
+        const errorMsg = document.getElementById("errorMsg");
+        const form = document.getElementById("regForm");
+
+        cpwd.addEventListener("input", function() {
+            if (pwd.value !== cpwd.value) {
+                errorMsg.style.display = "block";
+                cpwd.style.borderColor = "red";
+            } else {
+                errorMsg.style.display = "none";
+                cpwd.style.borderColor = "green";
+            }
+        });
+
+        form.addEventListener("submit", function(e) {
+            if (pwd.value !== cpwd.value) {
+                e.preventDefault();
+                alert("Please make sure passwords match before submitting.");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q11 - Mouse Events</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f4f4f9; text-align: center; }
+        #colorBox {
+            width: 300px;
+            height: 150px;
+            background-color: #007bff;
+            color: white;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mouseover & Mouseout Events</h2>
+    <div id="colorBox">Hover over this box!</div>
+
+    <script>
+        const box = document.getElementById("colorBox");
+
+        box.addEventListener("mouseover", function() {
+            box.style.backgroundColor = "#28a745";
+            box.innerText = "Mouse is Inside!";
+        });
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "#007bff";
+            box.innerText = "Hover over this box!";
+        });
+    </script>
+</body>
+</html>

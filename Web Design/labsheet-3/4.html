@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q4 - Fibonacci Series</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #eef2f5; }
+        .box { background: white; padding: 30px; max-width: 450px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        #seriesOutput { margin-top: 15px; word-break: break-all; font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Fibonacci Generator</h2>
+        <input type="number" id="termCount" placeholder="Enter number of terms (n)">
+        <button onclick="generateFibonacci()">Generate Series</button>
+        <div id="seriesOutput"></div>
+    </div>
+
+    <script>
+        function generateFibonacci() {
+            let n = parseInt(document.getElementById("termCount").value);
+            let output = document.getElementById("seriesOutput");
+
+            if (isNaN(n) || n <= 0) {
+                output.innerHTML = "Please enter a positive number greater than 0.";
+                return;
+            }
+
+            let fib = [];
+            if (n >= 1) fib.push(0);
+            if (n >= 2) fib.push(1);
+
+            let i = 2;
+            while (i < n) {
+                fib.push(fib[i - 1] + fib[i - 2]);
+                i++;
+            }
+
+            output.innerHTML = `Fibonacci Series (${n} terms): <br>` + fib.join(", ");
+        }
+    </script>
+</body>
+</html>

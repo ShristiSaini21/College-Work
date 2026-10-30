@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q6 - Array Methods</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #f4f4f9; }
+        .box { background: white; padding: 25px; max-width: 450px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        button { padding: 8px 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px 0; }
+        #output { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Array Manipulation</h2>
+        <p>Original Array: <span id="orig"></span></p>
+        <button onclick="manipulateArray()">Run Methods (push, pop, map, filter)</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        let arr = [5, 12, 8, 130, 44];
+        document.getElementById("orig").innerHTML = JSON.stringify(arr);
+
+        function manipulateArray() {
+            let res = [];
+            // Push & Pop
+            let temp = [...arr];
+            temp.push(99);
+            let popped = temp.pop();
+            
+            // Map (multiply by 2)
+            let mapped = temp.map(x => x * 2);
+            
+            // Filter (numbers greater than 10)
+            let filtered = temp.filter(x => x > 10);
+
+            document.getElementById("output").innerHTML = 
+                `After Push(99) & Pop: ${JSON.stringify(temp)} (Popped: ${popped})<br>` +
+                `Mapped (*2): ${JSON.stringify(mapped)}<br>` +
+                `Filtered (>10): ${JSON.stringify(filtered)}`;
+        }
+    </script>
+</body>
+</html>

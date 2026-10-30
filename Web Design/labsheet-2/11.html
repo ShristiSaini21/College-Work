@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q11 - CSS Specificity Contact Form</title>
+    
+    <!-- 1. EXTERNAL CSS -->
+    <link rel="stylesheet" href="style11.css">
+
+    <!-- 2. INTERNAL CSS (Overrides External) -->
+    <style>
+        .form-box {
+            background-color: #e9ecef; /* Internal style */
+            border: 2px dashed #007bff;
+        }
+        h2 {
+            color: #28a745; /* Internal color override */
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 40px;">
+
+    <!-- 3. INLINE CSS (Overrides both Internal & External on this specific element) -->
+    <div class="form-box" style="background-color: #ffffff; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        
+        <h2 style="color: #dc3545; text-align: center;">Contact Us</h2>
+        
+        <form>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Name:</label>
+                <input type="text" placeholder="Enter your name" style="width: 100%; padding: 8px; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; font-weight: bold; margin-bottom: 5px;">Message:</label>
+                <textarea rows="3" placeholder="Type your message..." style="width: 100%; padding: 8px; box-sizing: border-box;"></textarea>
+            </div>
+
+            <button type="submit" style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">Send Message</button>
+        </form>
+    </div>
+
+</body>
+</html>

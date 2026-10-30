@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q12 - Digital Clock</title>
+    <style>
+        body { font-family: Arial; padding: 60px; background: #121212; color: white; text-align: center; }
+        #clock {
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            background: #1e1e1e;
+            padding: 20px 40px;
+            display: inline-block;
+            border-radius: 10px;
+            border: 2px solid #03dac6;
+            color: #03dac6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Live Digital Clock</h2>
+    <div id="clock">00:00:00</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById("clock").innerText = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update every second using setInterval
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call to avoid 1-second delay
+    </script>
+</body>
+</html>

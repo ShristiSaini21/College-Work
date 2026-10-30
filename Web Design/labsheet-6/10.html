@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Build an interactive FAQ accordion section where clicking question headings expands and collapses answer text using JavaScript DOM manipulation. -->
+    <style>
+        .faq { max-width: 500px; margin: 40px auto; font-family: Arial; }
+        .faq-question { background: #eee; padding: 12px; cursor: pointer; border: 1px solid #ccc; margin-top: 5px; font-weight: bold; }
+        .faq-answer { display: none; padding: 12px; border: 1px solid #ccc; border-top: none; background: #fafafa; }
+    </style>
+</head>
+<body>
+    <div class="faq">
+        <div class="faq-question">What is your return policy?</div>
+        <div class="faq-answer">You can return items within 30 days of purchase.</div>
+        <div class="faq-question">How do I track my order?</div>
+        <div class="faq-answer">Tracking info is sent via email once shipped.</div>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

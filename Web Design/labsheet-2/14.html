@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q14 - Range Slider</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f4f4f9; }
+        .box { background: white; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; }
+        input[type="range"] { width: 100%; cursor: pointer; }
+        input[type="number"] { width: 80px; padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Range & Number Input</h2>
+        <form>
+            <div class="group">
+                <label>Volume Level (0 - 100):</label>
+                <input type="range" min="0" max="100" value="50" oninput="num.value=this.value">
+                <output name="num" id="num">50</output>
+            </div>
+            <div class="group">
+                <label>Direct Number Input:</label>
+                <input type="number" min="0" max="100" value="50" oninput="range.value=this.value">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

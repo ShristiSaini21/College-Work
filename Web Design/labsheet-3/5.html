@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q5 - Palindrome Checker</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f4f4f9; }
+        .box { background: white; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; }
+        button { background: #17a2b8; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        #res { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Palindrome Checker</h2>
+        <input type="text" id="strInput" placeholder="Enter a word or string">
+        <button onclick="checkPalindrome()">Check Palindrome</button>
+        <div id="res"></div>
+    </div>
+
+    <script>
+        function checkPalindrome() {
+            let str = document.getElementById("strInput").value.trim();
+            let resDiv = document.getElementById("res");
+
+            if (str === "") {
+                resDiv.innerHTML = "Please enter a valid string.";
+                return;
+            }
+
+            // Clean string (lowercase for case-insensitive check)
+            let cleanStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+            let revStr = cleanStr.split('').reverse().join('');
+
+            if (cleanStr === revStr) {
+                resDiv.innerHTML = `"${str}" is a Palindrome! (Reversed: ${revStr})`;
+                resDiv.style.color = "green";
+            } else {
+                resDiv.innerHTML = `"${str}" is NOT a Palindrome. (Reversed: ${revStr})`;
+                resDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

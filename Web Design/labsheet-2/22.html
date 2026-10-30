@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q22 - Floating Label Widget</title>
+    <style>
+        body { font-family: Arial; padding: 50px; background: #eef2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .widget { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); width: 100%; max-width: 350px; text-align: center; }
+        h2 { margin-bottom: 25px; color: #333; }
+        
+        .floating-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .floating-group input {
+            width: 100%;
+            padding: 15px 12px 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        /* CSS Positioning for floating label effect */
+        .floating-group label {
+            position: absolute;
+            left: 12px;
+            top: 14px;
+            color: #888;
+            background: white;
+            padding: 0 4px;
+            transition: 0.2s ease all;
+            pointer-events: none;
+        }
+        .floating-group input:focus ~ label,
+        .floating-group input:not(:placeholder-shown) ~ label {
+            top: -8px;
+            font-size: 11px;
+            color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <h2>Newsletter</h2>
+        <form>
+            <div class="floating-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email">Enter your email</label>
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</body>
+</html>

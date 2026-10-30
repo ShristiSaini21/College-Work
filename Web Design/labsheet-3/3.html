@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Q3 - Grade Evaluator</title>
+    <style>
+        body { font-family: Arial; padding: 40px; background: #f0f2f5; }
+        .box { background: white; padding: 30px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; }
+        button { background: #6200ee; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        #result { margin-top: 15px; font-size: 16px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Grade Evaluator</h2>
+        <input type="number" id="marks" placeholder="Enter marks (0-100)">
+        <button onclick="calculateGrade()">Get Grade</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            let m = parseFloat(document.getElementById("marks").value);
+            let res = document.getElementById("result");
+
+            if (isNaN(m) || m < 0 || m > 100) {
+                res.innerHTML = "Please enter valid marks between 0 and 100.";
+                return;
+            }
+
+            // Using if-else to determine category bracket for switch or direct evaluation
+            let grade = "";
+            let category = Math.floor(m / 10);
+
+            switch (category) {
+                case 10:
+                case 9:
+                    grade = "A+ (Outstanding)";
+                    break;
+                case 8:
+                    grade = "A (Excellent)";
+                    break;
+                case 7:
+                    grade = "B (Good)";
+                    break;
+                case 6:
+                    grade = "C (Average)";
+                    break;
+                case 5:
+                    grade = "D (Pass)";
+                    break;
+                default:
+                    grade = "F (Fail)";
+            }
+
+            res.innerHTML = `Marks: ${m} | Grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>
