@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form id="bookForm" onsubmit="return validateBooking()">
+        <h2>Table Reservation</h2>
+        <input type="text" id="uname" placeholder="Your Name"><br><br>
+        <input type="date" id="bdate"><br><br>
+        <button type="submit">Book Now</button>
+        <p id="err" style="color:red;"></p>
+    </form>
+    <script>
+        function validateBooking() {
+            let name = document.getElementById('uname').value;
+            let date = document.getElementById('bdate').value;
+            if(!name || !date) {
+                document.getElementById('err').textContent = "All fields are required!";
+                return false;
+            }
+            alert("Table booked successfully!");
+            return true;
+        }
+    </script>
+</body>
+</html>

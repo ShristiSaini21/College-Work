@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .carousel { max-width: 500px; margin: auto; position: relative; overflow: hidden; }
+        .slide { display: none; text-align: center; padding: 40px; background: #eee; font-size: 1.5rem; }
+        .slide.active { display: block; }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="slide active">Fresh Breads Daily!</div>
+        <div class="slide">Organic Coffee & Pastries</div>
+        <button onclick="changeSlide(-1)">Prev</button>
+        <button onclick="changeSlide(1)">Next</button>
+    </div>
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll('.slide');
+        function changeSlide(n) {
+            slides[index].classList.remove('active');
+            index = (index + n + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
