@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Inventory Report</h1>
+    <p><b>Total Unique Medicines:</b> {{ total_count }}</p>
+    <p><b>Total Stock Quantity:</b> {{ total_stock }}</p>
+    
+    <h3>Low Stock Medicines (&lt; 30)</h3>
+    <ul>
+    {% for m in low_stock %}
+        <li>{{ m.name }} (Stock: {{ m.stock }})</li>
+    {% else %}
+        <li>No low stock items.</li>
+    {% endfor %}
+    </ul>
+
+    {% if expensive %}
+    <p><b>Most Expensive Medicine:</b> {{ expensive.name }} (₹{{ expensive.price }})</p>
+    {% endif %}
+    {% if cheapest %}
+    <p><b>Cheapest Medicine:</b> {{ cheapest.name }} (₹{{ cheapest.price }})</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Delete Medicine</h1>
+    {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+    <form method="POST">
+        <label>Medicine ID to Delete</label>
+        <input type="number" name="medicine_id" required>
+        <button type="submit" style="background-color: #c62828;">Delete</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="max-width: 900px;">
+    <h1>All Medicines</h1>
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Manufacturer</th>
+        </tr>
+        {% for m in meds %}
+        <tr>
+            <td>{{ m.medicine_id }}</td>
+            <td>{{ m.name }}</td>
+            <td>{{ m.category }}</td>
+            <td>{{ m.price }}</td>
+            <td>{{ m.stock }}</td>
+            <td>{{ m.manufacturer }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">No medicines found.</td></tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Medicine Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add">Add Medicine</a>
+        <a href="/medicines">View Medicines</a>
+        <a href="/search">Search</a>
+        <a href="/update">Update Stock</a>
+        <a href="/delete">Delete</a>
+        <a href="/report">Report</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

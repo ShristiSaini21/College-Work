@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Update Medicine Stock</h1>
+    {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+    <form method="POST">
+        <label>Medicine ID</label>
+        <input type="number" name="medicine_id" required>
+        <label>New Stock</label>
+        <input type="number" name="stock" required>
+        <button type="submit">Update Stock</button>
+    </form>
+</div>
+{% endblock %}
