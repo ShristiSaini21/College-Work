@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Create a dark mode / light mode toggle switch using JavaScript to swap CSS root variables (`:root`) dynamically. -->
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+        }
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: Arial; padding: 20px; transition: 0.3s; }
+        button { padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Theme Switcher Example</h1>
+    <button id="toggleBtn">Switch to Dark Mode</button>
+    <script>
+        const btn = document.getElementById('toggleBtn');
+        btn.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                btn.textContent = "Switch to Dark Mode";
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                btn.textContent = "Switch to Light Mode";
+            }
+        });
+    </script>
+</body>
+</html>

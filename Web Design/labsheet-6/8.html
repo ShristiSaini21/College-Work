@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Design a pricing table section using CSS cards with distinct borders, hover elevation shadows, and highlighted popular plans. -->
+    <style>
+        .pricing-container { display: flex; justify-content: center; gap: 20px; padding: 40px; font-family: Arial; }
+        .pricing-card { border: 1px solid #ddd; padding: 30px; width: 250px; text-align: center; border-radius: 8px; transition: 0.3s; background: #fff; }
+        .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .pricing-card.popular { border-color: #007bff; border-width: 2px; position: relative; }
+        .badge { background: #007bff; color: white; padding: 4px 8px; font-size: 0.8rem; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <div class="pricing-card">
+            <h3>Basic Plan</h3>
+            <p>$10/month</p>
+            <button>Choose Plan</button>
+        </div>
+        <div class="pricing-card popular">
+            <span class="badge">Most Popular</span>
+            <h3>Pro Plan</h3>
+            <p>$29/month</p>
+            <button>Choose Plan</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Implement a 'Back to Top' floating button that appears when scrolling down the webpage and smoothly scrolls back to the top when clicked. -->
+    <style>
+        body { height: 2000px; font-family: Arial; }
+        #topBtn { display: none; position: fixed; bottom: 20px; right: 20px; background: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Scroll down to see the button</h1>
+    <button id="topBtn">Top</button>
+    <script>
+        const topBtn = document.getElementById('topBtn');
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop > 200) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+        topBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

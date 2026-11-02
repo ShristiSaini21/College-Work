@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Create a statistics counter animation in JavaScript that increments numbers from zero to target values when scrolled into view. -->
+    <style>
+        .counter-box { text-align: center; font-size: 3rem; margin-top: 100vh; font-family: Arial; }
+    </style>
+</head>
+<body>
+    <div class="counter-box" id="counter">0</div>
+    <script>
+        let started = false;
+        window.addEventListener('scroll', () => {
+            const counter = document.getElementById('counter');
+            const rect = counter.getBoundingClientRect();
+            if (rect.top < window.innerHeight && !started) {
+                started = true;
+                let count = 0;
+                const target = 500;
+                const interval = setInterval(() => {
+                    count += 10;
+                    counter.textContent = count;
+                    if (count >= target) clearInterval(interval);
+                }, 30);
+            }
+        });
+    </script>
+</body>
+</html>

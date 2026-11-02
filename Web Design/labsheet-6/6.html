@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Implement a client-side contact form validation script in JavaScript ensuring name, valid email, and message fields are populated before submission. -->
+    <style>
+        form { max-width: 400px; margin: 20px auto; display: flex; flex-Direction: column; gap: 10px; font-family: Arial; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        .error { color: red; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <form id="contactForm">
+        <h2>Contact Us</h2>
+        <label>Name: <input type="text" id="name"></label>
+        <label>Email: <input type="email" id="email"></label>
+        <label>Message: <textarea id="message"></textarea></label>
+        <button type="submit">Submit</button>
+        <div id="errorMsg" class="error"></div>
+    </form>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (!name || !email || !message) {
+                errorMsg.textContent = "All fields are required!";
+                return;
+            }
+            if (!email.includes('@') || !email.includes('.')) {
+                errorMsg.textContent = "Please enter a valid email address!";
+                return;
+            }
+            errorMsg.style.color = "green";
+            errorMsg.textContent = "Form submitted successfully!";
+        });
+    </script>
+</body>
+</html>

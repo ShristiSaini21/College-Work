@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Write CSS styles for print media (`@media print`) to ensure clean printing of the portfolio pages. -->
+    <style>
+        .no-print { background: yellow; padding: 10px; }
+        @media print {
+            .no-print { display: none; }
+            body { font-family: serif; color: black; background: white; }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print">This banner will not appear when printed!</div>
+    <h1>Portfolio Print View</h1>
+    <p>This content is optimized for clean printing using CSS print media queries.</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Design a CSS Grid-based photo gallery with image hover zoom effects using CSS `transform: scale()` and `transition` properties. -->
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery-item { overflow: hidden; border-radius: 8px; }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/300" alt="Gallery Image"></div>
+    </div>
+</body>
+</html>
